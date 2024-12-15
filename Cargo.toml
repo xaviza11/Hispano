@@ -1,0 +1,23 @@
+[package]
+name = "hispano"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.11.1"
+clap = "4.0"
+
+# Configuración del binario para ejecutar el codigo
+[[bin]]
+name = "output_bin"
+path = "output/main.rs"
+
+# Configuración del binario para el transpilador
+[[bin]]
+name = "function_bin"
+path = "function/main.rs"
+
+# Configuración del binario para comandos
+[[bin]]
+name = "hispano"
+path = "src/main.rs"

@@ -1,0 +1,8 @@
+ pub funcion condicional_si () {
+    var hola = "¡Hola Mundo!";
+    imprimir("¡Hola Mundo!");
+
+    si hola == "¡Hola Mundo!" {
+        imprimir("Imprime correcto {}", hola)
+    }
+ }

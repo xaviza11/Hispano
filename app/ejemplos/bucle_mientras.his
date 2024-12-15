@@ -1,0 +1,8 @@
+pub funcion bucle_mientras () {
+    var mut contador = 1;
+
+    mientras contador <= 5 {
+        imprimir("Contador: {}", contador);
+        contador += 1;
+    }
+}

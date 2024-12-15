@@ -1,0 +1,19 @@
+usar std::io;
+
+pub funcion bucle_siempre () {
+        siempre {
+        imprimir("Escribe algo (o 'exit' para salir):");
+
+        var mut entrada = String::new();
+        io::stdin().read_line(&mut entrada).expect("Error al leer la línea");
+
+        var entrada = entrada.recortar();
+
+        si entrada == "exit" {
+            imprimir("Saliendo...");
+            romper
+        } sino {
+            imprimir("Escribiste: {}", entrada);
+        }
+    }
+}

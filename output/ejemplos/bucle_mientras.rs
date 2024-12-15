@@ -1,0 +1,1 @@
+pub fn bucle_mientras () {    let mut contador = 1;    while contador <= 5 {        println!("Contador: {}", contador);        contador += 1;    }}

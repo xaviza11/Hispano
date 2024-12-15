@@ -1,0 +1,10 @@
+pub funcion condicional_coincide () {
+        var numero = 3;
+
+    coincide numero {
+        1 => imprimir("El número es uno."),
+        2 => imprimir("El número es dos."),
+        3 => imprimir("El número es tres."),
+        _ => imprimir("El número no es ni uno, ni dos, ni tres."),
+    }
+}

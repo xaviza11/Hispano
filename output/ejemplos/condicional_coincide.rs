@@ -1,0 +1,1 @@
+pub fn condicional_coincide () {        let numero = 3;    match numero {        1 => println!("El número es uno."),        2 => println!("El número es dos."),        3 => println!("El número es tres."),        _ => println!("El número no es ni uno, ni dos, ni tres."),    }}
