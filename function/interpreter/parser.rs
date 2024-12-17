@@ -7,7 +7,7 @@ pub fn parser(line: &str) -> Vec<String> {
 
     // Regular expression to match different patterns (strings, numbers, identifiers, operators, etc.)
     let re = Regex::new(
-        r#""[^"]*"|\d+|[a-zA-Z_][a-zA-Z0-9_]*|==|#|!|:|!=|>=|<=|\+=|-=|\*=|/=|%=|\+\+|--|=|[(),;{}\[\].]|>|<|\+|-|\*|/|%|&|\||\^|~|\?|MARK_SPACE"#
+        r#""[^"]*"|\d+|[a-zA-Z_][a-zA-Z0-9_]*|==|#|!|:|!=|>=|á|é|í|ó|ú|ä|ë|ï|ö|ü|Á|É|Í|Ó|Ú|Ä|Ë|Ï|Ö|Ü|ñ|<=|\+=|-=|\*=|/=|%=|\+\+|--|=|[(),;{}\[\].]|>|<|\+|-|\*|/|%|&|\||\^|~|\?|MARK_SPACE"#
     )
     .unwrap();
 

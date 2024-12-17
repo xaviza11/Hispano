@@ -1,5 +1,4 @@
-pub const DICTIONARY: [(&str, &str); 113] = [
-    // Palabras reservadas
+pub const DICTIONARY: [(&str, &str); 117] = [
     ("como", "as"),
     ("romper", "break"),
     ("const", "const"),
@@ -19,7 +18,7 @@ pub const DICTIONARY: [(&str, &str); 113] = [
     ("coincide", "match"),
     ("modulo", "mod"),
     ("mover", "move"),
-    ("mutable", "mut"),
+    ("mut", "mut"),
     ("pub", "pub"),
     ("ref", "ref"),
     ("retornar", "return"),
@@ -47,20 +46,16 @@ pub const DICTIONARY: [(&str, &str); 113] = [
     ("privado", "priv"),
     ("intentar", "try"),
     ("tipode", "typeof"),
-    ("tamano_dinamico", "unsized"),
+    ("tamañodinamico", "unsized"),
     ("virtual", "virtual"),
     ("ceder", "yield"),
-
-    // Palabras clave contextuales
+    ("imprimir", "println!"),
     ("automatico", "auto"),
     ("capturar", "catch"),
     ("defecto", "default"),
     ("dinamico", "dyn"),
     ("union", "union"),
     ("reglas_macro", "macro_rules"),
-
-    // Traducciones adicionales para tipos y literales
-    ("imprimir", "println!"),
     ("jefe", "main"),
     ("e32", "i32"),
     ("e64", "i64"),
@@ -74,8 +69,6 @@ pub const DICTIONARY: [(&str, &str); 113] = [
     ("Cadena", "String"),
     ("cadena", "str"),
     ("booleano", "bool"),
-
-    // Funciones adicionales
     ("nueva", "new"),
     ("filtrar", "filter"),
     ("recortar", "trim"),
@@ -91,7 +84,7 @@ pub const DICTIONARY: [(&str, &str); 113] = [
     ("leer", "read"),
     ("escribir", "write"),
     ("cambiar", "change"),
-    ("convertir_a", "to"),
+    ("pasar", "to"),
     ("obtener", "get"),
     ("establecer", "set"),
     ("primero", "first"),
@@ -104,38 +97,54 @@ pub const DICTIONARY: [(&str, &str); 113] = [
     ("dividir", "split"),
     ("unir", "join"),
     ("reemplazar", "replace"),
-    ("escribir_fichero", "write_file"),
+    ("escribir_arc", "write_file"),
     ("leer_fichero", "read_file"),
     ("agregar", "push"),
     ("quitar", "pop"),
     ("insertar", "insert"),
-    ("hacer_tarea", "task"),
+    ("tarea", "task"),
     ("guardar", "store"),
     ("leer_entrada", "read_input"),
     ("comprobar", "check"),
-    ("establecer_tiempo", "set_timeout"),
+    ("establecer_tmp", "set_timeout"),
     ("retrasar", "delay"),
     ("almacenar", "store"),
     ("suspender", "suspend"),
     ("cualquiera", "any"),
-
-    //testing
+    ("panico", "panic"),
     ("afirmo", "assert"),
+    ("afirmo_no", "assert_ne"),
     ("afirmo_igual", "assert_eq"),
-    ("another", "otro"),
-    ("panic", "panico")
+    ("otro", "another")
 ];
 
 pub fn translator(tokens: &Vec<String>) -> String {
-    let translated_tokens: Vec<String> = tokens
-        .iter()
-        .map(|token| {
-            DICTIONARY.iter()
-                .find(|&&(key, _)| key == token)
+    let mut translated_tokens: Vec<String> = Vec::new();
+    let mut inside_comment = false;
+
+    let mut prev_token = ""; // Variable para almacenar el token anterior y detectar "/*"
+
+    for token in tokens.iter() {
+        if prev_token == "/" && token == "*" {
+            inside_comment = true;
+        }
+        if prev_token == "*" && token == "/" {
+            inside_comment = false;
+        }
+
+        if inside_comment {
+            translated_tokens.push(token.to_string());
+        } else {
+            let translated_token = DICTIONARY.iter()
+                .find(|&&(key, _)| key == *token)
                 .map(|&(_, value)| value.to_string())
-                .unwrap_or_else(|| token.to_string())
-        })
-        .collect();
+                .unwrap_or_else(|| token.to_string());
+
+            translated_tokens.push(translated_token);
+        }
+
+        prev_token = token;
+    }
 
     translated_tokens.join(" ")
 }
