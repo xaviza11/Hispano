@@ -1,7 +1,7 @@
 pub funcion condicional_coincide () {
-        var numero = 3;
+    const NUMERO: e32 = 3;
 
-    coincide numero {
+    coincide NUMERO {
         1 => imprimir("El número es uno."),
         2 => imprimir("El número es dos."),
         3 => imprimir("El número es tres."),

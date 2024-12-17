@@ -1,0 +1,23 @@
+/* Definición de una estructura */
+estructura Persona {
+    nombre: Cadena,
+    edad: e32,
+}
+
+implementar Persona {
+    funcion nuevo(nombre: Cadena, edad: in32) -> Persona {
+        Persona {
+            nombre,
+            edad,
+        }
+    }
+
+    funcion saludar(&elmismo) {
+        imprimir("Hola, mi nombre es {} y tengo {} años.", elmismo.nombre, elmismo.edad);
+    }
+}
+
+funcion main() {
+    const NUEVA_PERSONA = Persona::nuevo(Cadena::from("Juan"), 30);
+    NUEVA_PERSONA.saludar();
+}

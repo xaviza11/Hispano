@@ -1,8 +1,8 @@
  pub funcion condicional_si () {
-    var hola = "¡Hola Mundo!";
+    const HOLA: &cadena = "¡Hola Mundo!";
     imprimir("¡Hola Mundo!");
 
-    si hola == "¡Hola Mundo!" {
-        imprimir("Imprime correcto {}", hola)
+    si HOLA == "¡Hola Mundo!" {
+        imprimir("Imprime correcto {}", HOLA)
     }
  }

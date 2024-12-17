@@ -1,7 +1,7 @@
 pub funcion bucle_cuando() {
     var numeros = vec![1, 2, 3, 4, 5];
 
-    cuando numero in &numeros {
+    cuando numero en &numeros {
         imprimir("El número es: {}", numero);
     }
 }

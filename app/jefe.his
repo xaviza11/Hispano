@@ -1,20 +1,22 @@
 mod ejemplos;
 
 funcion jefe() {
+
+    /*Esta es la unica forma que comentar el código en hispano. El comentario de una linea // no funcionará como comentario, si se intenta usar provocará errores.*/
+
     ejemplos::condicional_coincide::condicional_coincide();
     ejemplos::condicional_si::condicional_si();
 
-    
     ejemplos::bucle_cuando::bucle_cuando();
     ejemplos::bucle_mientras::bucle_mientras();
     ejemplos::bucle_siempre::bucle_siempre();
-
 }
 
 #[cfg(test)]
 mod tests {
     #[test]
     funcion test_inicial() {
-        afirmo!(true);
+        afirmo!(verdadero);
+        afirmo_no!(verdadero, falso);
     }
 }

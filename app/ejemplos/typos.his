@@ -1,0 +1,19 @@
+pub funcion jefe () {
+    const ENTERO: e32 = -42;
+    const SIN_SIGNO: in64 = 100000;
+    const FLOTANTE: f64 = 3.14159; 
+    const CARACTER: caracter = "A"; 
+    const BOLEANO: bool = verdadero; 
+    const TUPLA: (e32, f64, caracter) = (10, 3.14, "R"); 
+    const ARREGLO: [e32; 3] = [1, 2, 3]; 
+   
+    const (x, y, z) = TUPLA;
+ 
+    imprimir("Tupla: x = {}, y = {}, z = {}", x, y, z);
+    imprimir("ARREGLO: primer elemento = {}", ARREGLO[0]);
+    imprimir("Tipo Escalar - Entero: {}", ENTERO);
+    imprimir("Tipo Escalar - Sin signo: {}", SIN_SIGNO);
+    imprimir("Tipo Escalar - Flotante: {}", FLOTANTE);
+    imprimir("Tipo Escalar - Caracter: {}", CARACTER);
+    imprimir("Tipo Escalar - Booleano: {}", BOLEANO);
+}

@@ -1,1 +1,1 @@
- pub fn condicional_si () {    let hola = "¡Hola Mundo!";    println!("¡Hola Mundo!");    if hola == "¡Hola Mundo!" {        println!("Imprime correcto {}", hola)    } }
+ pub fn condicional_si () {    const HOLA: &str = "¡Hola Mundo!";    println!("¡Hola Mundo!");    if HOLA == "¡Hola Mundo!" {        println!("Imprime correcto {}", HOLA)    } }

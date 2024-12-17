@@ -2,14 +2,14 @@ usar std::io;
 
 pub funcion bucle_siempre () {
         siempre {
-        imprimir("Escribe algo (o 'exit' para salir):");
+        imprimir("Escribe algo (o 'salir' para salir):");
 
-        var mut entrada = String::new();
+        var mut entrada = Cadena::nueva();
         io::stdin().read_line(&mut entrada).expect("Error al leer la línea");
 
         var entrada = entrada.recortar();
 
-        si entrada == "exit" {
+        si entrada == "salir" {
             imprimir("Saliendo...");
             romper
         } sino {
