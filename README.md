@@ -25,7 +25,7 @@ Para instalar **Hispano**, sigue los siguientes pasos:
     cargo install --path .
     ```
 
-Esto te permite **ejecutar Hispano** desde la línea de comandos.
+- Esto te permite **ejecutar Hispano** desde la línea de comandos.
 ---
 
 ## 📜 Comandos disponibles 
