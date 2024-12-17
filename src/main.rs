@@ -58,15 +58,14 @@ fn main() {
     }
 }
 
-// Ahora, `run_command` devuelve un Result con un mensaje de error si el comando falla.
 fn run_command(command: &str, args: &[&str]) -> Result<ExitStatus, String> {
     let status = ProcessCommand::new(command)
         .args(args)
         .status()
-        .map_err(|e| format!("Error al ejecutar el comando '{}': {}", command, e))?;
-    
-    if !status.success() {
-        return Err(format!("El comando '{}' falló con código de salida: {}", command, status));
-    }
+        .map_err(|e| {
+            let error_message = format!("Error al ejecutar el comando '{}': {}", command, e);
+            error_message
+        })?;
+
     Ok(status)
 }
