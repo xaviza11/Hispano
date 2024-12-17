@@ -2,6 +2,11 @@
 
 **Hispano** es un lenguaje transpilado de programación con sintaxis en español, pensado para hacer la programación más accesible y natural para hablantes de español.
 
+- El repositorio de GitHub: [Hispano en GitHub](https://github.com/xaviza11/Hispano)
+
+- Encuentra su extensión para VS Code aquí: [Hispano VS Code Extension](https://github.com/xaviza11/Hispano-vsc-extension)
+
+
 ## ✨ Características 
 - **Sintaxis en español**: Palabras clave como `funcion`, `estructura`, `var`, `si`, etc.
 - **Tipado estático y orientación a objetos**.
